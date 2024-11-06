@@ -1,0 +1,211 @@
+/* สไตล์พื้นฐาน */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #ffe6f0, #ffccf2);
+}
+
+/* สไตล์สำหรับลูกโป่ง */
+.balloon {
+    position: absolute;
+    bottom: -1000px; /* เริ่มต้นลูกโป่งต่ำกว่าหน้าจอเล็กน้อย */
+    background-color: #ff69b4;
+    border-radius: 50%;
+    opacity: 0.9;
+    box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+    animation: float 40s infinite ease-in-out; /* เพิ่ม ease-in-out ให้ลอยนุ่มนวล */
+}
+
+/* แอนิเมชันการลอย */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-500vh); /* ลอยขึ้นเหนือจอ */
+        opacity: 0; /* จางหาย */
+    }
+}
+
+
+/* สไตล์สำหรับส่วนคำอวยพร */
+.section {
+    padding: 9px;
+    text-align: center;
+    position: relative; /* ทำให้ตำแหน่งทำงานได้ */
+    z-index: 1; /* ให้อยู่ด้านหน้า */
+}
+
+/* กรอบสไตล์สำหรับแต่ละ section */
+.section .content {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.section h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.section p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* เพิ่มสไตล์พื้นหลังและการจัดกึ่งกลาง */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom right, #ffe6f0, #ffccf2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* กำหนดขนาดลูกโป่งให้เป็นระเบียบ */
+.balloon {
+    width: 40px;
+    height: 60px;
+}
+
+/* ปรับสีให้ footer */
+footer h1 {
+    color: #ff69b4;
+    font-size: 24px;
+    padding: 10px;
+}
+
+.gallery-container img:hover {
+    transform: scale(1.05); /* เพิ่มขนาดเมื่อ hover */
+}
+
+/* เพิ่ม hover effect */
+.carousel-button:hover {
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.1); /* ขยายปุ่มเมื่อ hover */
+}
+
+/* ปรับให้ดูดีบนมือถือ */
+@media (max-width: 600px) {
+    .content {
+        padding: 10px;
+    }
+
+    .balloon {
+        width: 20px; /* ขนาดลูกโป่งเล็กลง */
+        height: 30px; /* ขนาดลูกโป่งเล็กลง */
+    }
+
+    .gallery-container img {
+        max-width: 100%; /* ปรับขนาดภาพให้เต็มความกว้าง */
+    }
+
+    h1 {
+        font-size: 24px; /* ปรับขนาดหัวเรื่อง */
+    }
+
+    p {
+        font-size: 16px; /* ปรับขนาดข้อความ */
+    }
+}
+
+/* สไตล์สำหรับคำอธิษฐาน */
+.prayer {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* พื้นหลังใส */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ปรับสไตล์ของ gallery-container และ carousel */
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* เพิ่มขนาดของ carousel */
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.carousel-inner img {
+    width: 100%; /* ทำให้ภาพขนาดเท่ากับ carousel */
+    height: auto; /* ปรับอัตราส่วนตามขนาดภาพ */
+    object-fit: cover; /* จัดการให้ภาพอยู่ในพื้นที่โดยไม่ถูกบีบหรือขยาย */
+    border-radius: 15px;
+    margin: 0;
+}
+
+/* เพิ่มสไตล์ให้ปุ่มเลื่อน carousel */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #ff69b4;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.carousel-button:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.prev {
+    left: 15px;
+}
+
+.next {
+    right: 15px;
+}
+
+/* เพิ่มการตอบสนองสำหรับหน้าจอขนาดเล็ก */
+@media (max-width: 768px) {
+    .carousel {
+        max-width: 100%; /* ให้ carousel ขยายเต็มหน้าจอบนมือถือ */
+    }
+}
+
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Animation for header */
+header {
+    background-color: rgba(255, )
+}
