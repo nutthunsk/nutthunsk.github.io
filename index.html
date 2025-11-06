@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday</title>
+    <link rel="stylesheet" href="jno.css">
+    <link rel="wedsite icon" href="/img/p3.jpg">
+</head>
+<body>
+
+    <div id="app">
+        <!-- 🔹 เมนูเลือกปี -->
+        <div id="year-selector" style="text-align:center; margin-top:20px;">
+            <label for="year" style="font-size:18px; color:#ff69b4;">🎂: </label>
+            <select id="year" onchange="changeYear()" style="padding:8px; border-radius:10px; border:2px solid #ff69b4; color:#ff69b4;">
+                <option value="2024">💖8/11/2024</option>
+                <option value="2025">🌸8/11/2025</option>
+            </select>
+        </div>
+
+        <!-- 🔹 ปี 2024 -->
+        <div id="year2024" class="year-content">
+            <section id="greeting" class="section">
+                <div class="content fade-in">
+                    <h1>Happy Birthday 🎉</h1>
+                    <h3>@Jannieooy 💖</h3>
+                    <img src="img/—Pngtree—light color three dimensional birthday_12164411.png" width="40%">
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="content fade-in">
+                    <h1>Picture of Memories 📸</h1>
+                    <div class="gallery-container">
+                        <div class="carousel">
+                            <div class="carousel-inner">
+                                <img src="/img/E47491F5-CA91-402C-B56C-54B2D65F07F3.JPG" alt="รูปภาพที่ 1">
+                                <img src="/img/p1.jpg" alt="รูปภาพที่ 2">
+                                <img src="/img/5D43FC50-C0A8-4744-B112-DAD158F85A0C.JPG" alt="รูปภาพที่ 3">
+                                <img src="/img/D6DEE04E-B965-4D13-B441-707A198FC168.JPG" alt="รูปภาพที่ 4">
+                                <img src="/img/196BAEB8-0EDE-4F05-9F93-EE79315EA86D.JPG" alt="รูปภาพที่ 5">
+                            </div>
+                            <button class="carousel-button prev" onclick="moveSlide(-1)">❮</button>
+                            <button class="carousel-button next" onclick="moveSlide(1)">❯</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="content fade-in">
+                    <h1>Love song for you 💖</h1>
+                    <p>มันเป็นเพลงที่เธอชอบตอนที่เค้าเปิดให้ฟัง<br>
+                        ฟังบ่อยๆนะ รักเธอ 💖
+                    </p>
+                    <iframe src="https://open.spotify.com/embed/track/4okhrrtNhHB28u0LEsDPn8?si=16e2463bf3a8415e"
+                        width="300" height="80" frameborder="0"
+                        allowtransparency="true" allow="encrypted-media"></iframe>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="content prayer fade-in">
+                    <h1>Prayer 🙏</h1>
+                    <p>สุขสันต์วันเกิดนะคนเก่ง 💖 ขอบคุณที่เข้ามาเติมเต็มชีวิตให้มีความสุขทุกวัน
+                        เธอคือคนพิเศษที่สุดที่ทำให้ฉันยิ้มได้ทุกครั้งที่คิดถึง
+                        หวังว่าวันนี้และทุกๆ วันของเธอจะเต็มไปด้วยความสุขและความรัก
+                        ขอให้ทุกความฝันของเธอเป็นจริง และขอให้มีฉันอยู่ข้างๆ เธอเสมอ รักมากนะ 💕</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- 🔹 ปี 2025 -->
+        <div id="year2025" class="year-content" style="display:none;">
+            <section id="greeting" class="section">
+                <div class="content fade-in">
+                    <h1>Happy Birthday</h1>
+                    <h3>@JNO 💖</h3>
+                    <img src="img/pngegg.png" width="40%">
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="content fade-in">
+                    <h1> 💕Memories💕 </h1>
+                    <div class="gallery-grid">
+                        <img src="/img/0bcb72ee-42f8-4431-a29b-3ab037aa5242.jpg" alt="รูปภาพที่ 1">
+                        <img src="/img/18d8bd6f-bb98-4c4f-a7f7-0cf3445921d3.jpg" alt="รูปภาพที่ 2">
+                        <img src="/img/5fcd1de3-c0d5-475b-822d-07940022dbe8.jpg" alt="รูปภาพที่ 3">
+                        <img src="/img/a8ce6538-b49e-4ca9-911b-57bd7261e0c2.jpg" alt="รูปภาพที่ 4">
+                        <img src="/img/490fa375-b44a-4498-bc77-9ec5aa26d295.jpg" alt="รูปภาพที่ 5">
+                        <img src="/img/c1abca25-56c2-49dc-96d0-281289e54984.jpg" alt="รูปภาพที่ 6">
+                    </div>
+
+<!-- 🔹 กล่อง popup สำหรับแสดงรูปใหญ่ -->
+                    <div id="image-popup" class="popup">
+                        <span class="close">&times;</span>
+                        <img class="popup-content" id="popup-img">
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="content fade-in">
+                    <h1>Love song for you 💕</h1>
+                    <p>มันเป็นเพลงที่เราได้ส่งให้กันปีที่แล้ว ปีนี้ดีใจนะที่ได้ไปฟังด้วยกันและขอให้ปีต่อๆไปได้ฟังด้วยกันอีกนะ 💖
+                    </p>
+                    <video controls>
+                        <source src="img/f5b78e38-ec55-49fe-a84c-8fbb9443e55f.mp4" type="video/mp4" width="150" height="80">
+                        เบราว์เซอร์ของคุณไม่รองรับการเล่นวิดีโอ
+                    </video>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="content prayer fade-in">
+                    <h1>Prayer 🙏</h1>
+                    <p>สุขสันต์วันเกิดนะคนเก่ง โตขึ้นอีกปีแล้วนะ ขอให้เจอแต่สิ่งดีๆในนชีวิต มีความสุขมีแต่คนรัก ประสบความสำเร็จในสิ่งที่หวังนะ
+                        ขอบคุณที่เข้ามาเติมเต็มชีวิตให้มีความสุขทุกวัน รักนะ 💕
+                    </p>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <h1>LOVE U 3000 NA 💖</h1>
+    </footer>
+
+    <script src="่่jno.js"></script>
+
+    <!-- 🔹 เพิ่มสคริปต์เลือกปี -->
+    <script>
+        function changeYear() {
+            const selectedYear = document.getElementById('year').value;
+            const years = document.querySelectorAll('.year-content');
+            years.forEach(y => y.style.display = 'none');
+            document.getElementById('year' + selectedYear).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
